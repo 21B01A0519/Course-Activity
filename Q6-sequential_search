@@ -1,0 +1,39 @@
+#6(a) A Python program to search for the position of an element in an array using sequential  search. 
+
+def Sequential_Search(dlist, item):
+
+    pos = 0
+    found = False
+    
+    while pos < len(dlist) and not found:
+        if dlist[pos] == item:
+            found = True
+        else:
+            pos = pos + 1
+    if found == False:
+         return "Not found"
+    
+    return found, pos
+
+print(Sequential_Search([11,23,58,31,56,77,43,12,65,19],32))
+print(Sequential_Search([11,23,58,31,56,77,43,12,65,19],77))
+
+
+#6(b) Write a Python program that accepts a string and calculate the number of digits,  Capital case letters and small case letters. 
+
+def string(str):
+    digits=upper=lower=0
+
+    for i in str:
+       if i.isdigit():
+           digits += 1
+       elif i.isupper():
+           upper += 1
+       elif i.islower():
+           lower += 1
+    return upper,lower,digits
+
+count1 , count2, count3 = string("B.Swathi 21B01A0519")
+print("Capital case letters =",count1)
+print("Lower case letters =",count2)
+print("No.of digits =",count3)
